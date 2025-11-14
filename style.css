@@ -1,7 +1,6 @@
 
 :root {
     --color-violet: #4B0082; 
-    --color-magenta: #ffac1cff; 
     --color-green: #38a169; 
     --color-light-bg: #f8f8fb;
     --color-gray-text: #666;
@@ -59,7 +58,7 @@ a {
 }
 
 .nav-links-left a {
-    color: #555;
+    color: var(--color-violet);
     font-size: 15px;
     padding: 8px 0;
     border-bottom: 2px solid transparent;
@@ -67,8 +66,8 @@ a {
 }
 
 .nav-links-left a:hover {
-    color: var(--color-magenta);
-    border-bottom: 2px solid var(--color-magenta);
+    color: var(--color-violet);
+    border-bottom: 2px solid var(--color-violet);
 }
 
 .nav-links-right {
@@ -84,7 +83,7 @@ a {
 
 .btn-secondary-nav {
     color: white;
-    background: var(--color-magenta);
+    background: var(--color-violet);
     padding: 8px 18px;
     border-radius: 6px;
     font-weight: 500;
@@ -125,7 +124,7 @@ a {
 
 
 .hero-title .highlight {
-    color: var(--color-magenta);
+    color: #ffac1c;
     display: block; 
 }
 
@@ -154,7 +153,7 @@ a {
 }
 
 .btn-verify {
-    background: var(--color-magenta);
+    background: var(--color-violet);
     color: white;
 }
 .btn-verify i {
@@ -187,16 +186,16 @@ a {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #f0f0f5; 
-    color: var(--color-magenta); 
+    background-color: #ffffff; 
+    color: var(--color-violet); 
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto 15px auto;
 }
 
-.feature-card h3 {
-    font-size: 16px;
+.feature-card h2 {
+    font-size: 20px;
     font-weight: bold;
     color: var(--color-violet);
     margin-bottom: 8px;
@@ -274,7 +273,7 @@ a {
 }
 
 .btn-form-verify {
-    background: var(--color-magenta);
+    background: var(--color-violet);
     color: white;
 }
 
@@ -349,20 +348,6 @@ a {
    
 }
 
-.support-box {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 25px;
-    background-color: #e0f2fe;
-    color: #0c4a6e;
-    border-radius: 8px;
-    display: flex;
-    align-items: flex-start;
-}
-.support-box i {
-    margin-right: 15px;
-    color: #0e7490;
-}
 
 .footer-container {
     background-color: white;
@@ -410,7 +395,7 @@ a {
 
 .contact-info p i {
     margin-right: 8px;
-    color: var(--color-magenta);
+    color: var(--color-violet);
 }
 
 .social-links {
@@ -422,7 +407,7 @@ a {
 .social-links i {
     width: 20px;
     height: 20px;
-    color: var(--color-magenta);
+    color: var(--color-violet);
 }
 
 .footer-bottom {
