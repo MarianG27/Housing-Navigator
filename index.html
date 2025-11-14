@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Navigator | Locuințe Sociale</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+    <img src="logohn.svg" alt="Housing Navigator Logo" class="logo-img">
+    Housing Navigator
+</div>
+        <ul class="nav-links-left">
+            <li><a href="#eligibilitate-form">Verifică Eligibilitatea</a></li>
+            <li><a href="#faq-section">Cum Funcționează</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-links-right">
+            <span class="user-email">mama@gmail.com</span>
+            <a href="#" class="btn-secondary-nav"><i class="fas fa-sign-out-alt"></i> Deconectare</a>
+        </div>
+    </nav>
+
+    <header class="hero-container">
+        <span class="badge-hero">
+        </span>
+
+       <h1 class="hero-title">
+    Locuințe Sociale <br >
+    <span class="highlight">Simple și Transparente</span>
+</h1>
+        <p class="hero-subtitle">
+            Verifică-ți eligibilitatea instant, urmărește poziția în lista de așteptare și primește actualizări în timp real.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#eligibilitate-form" class="btn-verify">
+                <i class="fas fa-arrow-down"></i>
+                Verifică Eligibilitatea
+            </a>
+            <a href="#faq-section" class="btn-how-it-works">
+                Cum Funcționează
+            </a>
+        </div>
+
+        <div class="feature-cards">
+            <div class="feature-card">
+                <div class="card-icon-container"><i class="fas fa-eye fa-lg"></i></div>
+                <h3>Transparență Totală</h3>
+                <p>Vezi poziția ta exactă în lista de așteptare, în timp real.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon-container"><i class="fas fa-bolt fa-lg"></i></div>
+                <h3>Evaluare Instantanee</h3>
+                <p>Află imediat dacă ești eligibil, fără stres și birocrație.</p>
+            </div>
+            <div class="feature-card">
+                <div class="card-icon-container"><i class="fas fa-shield-alt fa-lg"></i></div>
+                <h3>Date Securizate</h3>
+                <p>Informațiile tale sunt protejate și anonimizate.</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="eligibilitate-form" class="content-section">
+        <div class="form-container">
+            <h2 class="form-title">Verifică-ți Eligibilitatea</h2>
+            <p class="text-center mb-6 text-gray-600">
+                Completează formularul pentru a aplica pentru o locuință socială.
+            </p>
+
+            <form>
+                <div class="form-group">
+                    <label for="netIncome">Venit Lunar Net (Lei)</label>
+                    <input type="number" id="netIncome" placeholder="ex: 2500" required>
+                </div>
+                <div class="form-group">
+                    <label for="familyMembers">Număr Membri Familie</label>
+                    <input type="number" id="familyMembers" placeholder="ex: 3" required>
+                </div>
+                <div class="form-group">
+                    <label for="hasDisability">Persoană cu Dizabilități în Familie?</label>
+                    <select id="hasDisability" required>
+                        <option value="">Selectează...</option>
+                        <option value="yes">Da</option>
+                        <option value="no">Nu</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="housingSituation">Situația Locuinței Actuale</label>
+                    <select id="housingSituation" required>
+                        <option value="">Selectează...</option>
+                        <option value="owner">Proprietar</option>
+                        <option value="rent_private">Chirie (privat)</option>
+                        <option value="homeless">Fără adăpost</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="additionalInfo">Informații Adiționale (Opțional)</label>
+                    <textarea id="additionalInfo" placeholder="Descrie situația ta în detaliu..."></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-form-verify">Verifică Punctajul</button>
+                    <button type="submit" class="btn-form-submit">Trimite Cererea</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Dashboard Lista de Așteptare</h2>
+        
+        <div class="dashboard-alert">
+            <i class="fas fa-info-circle fa-lg"></i>
+            <p>
+                Nu ai încă o cerere înregistrată. Completează <a href="#eligibilitate-form" class="alert-link">formularul de eligibilitate</a> mai sus pentru a aplica.
+            </p>
+        </div>
+
+        <div id="faq-section" class="faq-section">
+            <h2 class="faq-title">Întrebări Frecvente</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Cum funcționează procesul de aplicare?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer open">
+                        <p>Procesul este complet digital: completezi formularul de eligibilitate, cererea este evaluată automat, iar tu primești un punctaj și o poziție anonimizată în lista de așteptare.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Cât timp trebuie să aștept pentru o locuință?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Timpul de așteptare variază în funcție de punctajul tău și de disponibilitatea locuințelor.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="support-box">
+                <i class="fas fa-comment-alt fa-lg"></i>
+                <div>
+                    <h3 class="font-bold mb-1">Ai nevoie de ajutor suplimentar?</h3>
+                    <p class="text-sm">Asistentul nostru virtual este disponibil 24/7 pentru a răspunde la întrebările tale specifice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-column footer-logo-section">
+                <div class="logo">
+                    <i class="fas fa-home logo-icon"></i>
+                    Locuințe Sociale
+                </div>
+                <p>Platformă modernă și sigură pentru accesul la locuințe sociale.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Link-uri Utile</h3>
+                <ul>
+                    <li><a href="#">Despre Noi</a></li>
+                    <li><a href="#">Cum Funcționează</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Termeni și Condiții</a></li>
+                    <li><a href="#">Politica de Confidențialitate</a></li>
+                </ul>
+            </div>
+            <div class="footer-column contact-info">
+                <h3>Contact</h3>
+                <p><i class="fas fa-envelope icon"></i> contact@locuinte.ro</p>
+                <p><i class="fas fa-phone icon"></i> +40 123 456 789</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Locuințe Sociale. Toate drepturile rezervate.
+        </div>
+    </footer>
+    
+    </body>
+</html>
