@@ -4,31 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Housing Navigator | Locuințe Sociale</title>
+    
+    <link rel="icon" type="image/svg+xml" href="logohn.svg">
+
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">
-    <img src="logohn.svg" alt="Housing Navigator Logo" class="logo-img">
-    Housing Navigator
-</div>
+            <img src="logohn.svg" alt="Housing Navigator Logo" class="logo-img">
+            Housing Navigator
+        </div>
         <ul class="nav-links-left">
             <li><a href="#eligibilitate-form">Verifică Eligibilitatea</a></li>
             <li><a href="#faq-section">Cum Funcționează</a></li>
             <li><a href="#contact-section">Contact</a></li>
         </ul>
+        
         <div class="nav-links-right">
-            <span class="user-email">exemplu@gmail.com</span>
-            <a href="#" class="btn-secondary-nav"><i class="fas fa-sign-out-alt"></i> Deconectare</a>
+            <a href="login.html" class="btn-secondary-nav">
+                <i class="fas fa-sign-in-alt"></i> Conectare
+            </a>
         </div>
     </nav>
 
     <header class="hero-container">
-       <h1 class="hero-title">
-    Locuințe Sociale <br >
-    <span class="highlight">Simple și Transparente</span>
-</h1>
+        <h1 class="hero-title">
+            Locuințe Sociale <br>
+            <span class="highlight">Simple și Transparente</span>
+        </h1>
         <p class="hero-subtitle">
             Verifică-ți eligibilitatea instant, urmărește poziția în lista de așteptare și primește actualizări în timp real.
         </p>
@@ -45,17 +51,17 @@
 
         <div class="feature-cards">
             <div class="feature-card">
-                <div class="card-icon-container"><img src=/lista.jpg width="60" height="60"><i class="fas fa-eye fa-lg"></i></div>
+                <div class="card-icon-container"><img src="/lista.jpg" width="60" height="60"></div>
                 <h2>Transparență <br>Totală</h2>
                 <p style="font-size: medium;">Vezi poziția ta exactă în lista de așteptare, în timp real.</p>
             </div>
             <div class="feature-card">
-                <div class="card-icon-container"><img src=/lightning.png width="50" height="50"><i class="fas fa-bolt fa-lg"></i></div>
+                <div class="card-icon-container"><img src="/lightning.png" width="50" height="50"></div>
                 <h2>Evaluare Instantanee</h2>
                 <p style="font-size: medium;">Află imediat dacă ești eligibil, fără stres și birocrație.</p>
             </div>
             <div class="feature-card">
-                <div class="card-icon-container"><img src=/lock.png width="50" height="50"><i class="fas fa-shield-alt fa-lg"></i></div>
+                <div class="card-icon-container"><img src="/lock.png" width="50" height="50"></div>
                 <h2>Date <br>Securizate</h2>
                 <p style="font-size: medium;">Informațiile tale sunt protejate și anonimizate.</p>
             </div>
@@ -95,16 +101,24 @@
                         <option value="homeless">Fără adăpost</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="additionalInfo">Informații Adiționale (Opțional)</label>
-                    <textarea id="additionalInfo" placeholder="Descrie situația ta în detaliu..."></textarea>
+                
+                <div id="authWarning" class="auth-warning">
+                    Aceasta este o simulare. Pentru aplicarea oficială, trebuie să te autentifici.
                 </div>
 
                 <div class="form-actions">
-                    <button type="button" class="btn-form-verify">Verifică Punctajul</button>
-                    <button type="submit" class="btn-form-submit">Trimite Cererea</button>
+                    <button type="button" id="verifyBtn" class="btn-form-verify">
+                        <i class="fas fa-calculator"></i> Calculează Șansele
+                    </button>
+                    
+                    <button type="submit" id="submitBtn" class="btn-form-submit" style="display: none;">
+                        <i class="fas fa-paper-plane"></i> Trimite Cererea Oficială
+                    </button>
                 </div>
             </form>
+            
+            <div id="resultMessage" class="result-message hidden">
+            </div>
         </div>
     </section>
 
@@ -127,7 +141,7 @@
                         Cum funcționează procesul de aplicare?
                         <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer open">
+                    <div class="faq-answer">
                         <p>Procesul este complet digital: completezi formularul de eligibilitate, cererea este evaluată automat, iar tu primești un punctaj și o poziție anonimizată în lista de așteptare.</p>
                     </div>
                 </div>
@@ -144,13 +158,14 @@
 
         </div>
     </section>
+
     <div id="contact-section" class="contact-section">
         <footer class="footer-container">
             <div class="footer-content">
                 <div class="footer-column footer-logo-section">
                     <div class="logo">
-                        <i class="fas fa-home logo-icon"></i>
-                        Locuințe Sociale
+                        <img src="logohn.svg" alt="Housing Navigator Logo" class="logo-img" style="width: 30px; height: 30px;">
+                        Housing Navigator
                     </div>
                     <p>Platformă modernă și sigură pentru accesul la locuințe sociale.</p>
                 </div>
@@ -158,7 +173,7 @@
                     <h3>Link-uri Utile</h3>
                     <ul>
                         <li><a href="#">Despre Noi</a></li>
-                        <li><a href="#">Cum Funcționează</a></li>
+                        <li><a href="#faq-section">Cum Funcționează</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -185,5 +200,8 @@
             </div>
         </footer>
     </div>
-    </body>
+    
+    <script src="script.js"></script>
+
+</body>
 </html>

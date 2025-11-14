@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectare | Housing Navigator</title>
+    
+    <link rel="icon" type="image/svg+xml" href="logohn.svg">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <main>
+        <div class="back-link-container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Înapoi la Pagina Principală
+            </a>
+        </div>
+        
+        <section id="login-section" class="content-section" style="min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+            <div class="form-container login-form-container">
+                <h2 class="form-title">Conectare Utilizator</h2>
+                <p class="text-center mb-6 text-gray-600">
+                    Introdu datele tale pentru a accesa Dashboard-ul personal.
+                </p>
+
+                <form>
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="adresa.ta@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Parolă</label>
+                        <input type="password" id="loginPassword" placeholder="********" required>
+                    </div>
+
+                    <div class="form-actions login-actions">
+                        <button type="submit" class="btn-form-submit">
+                            <i class="fas fa-sign-in-alt"></i> Logare
+                        </button>
+                    </div>
+                </form>
+                
+                <p class="text-center mt-4">
+                    Nu ai cont? <a href="#" class="alert-link">Înregistrează-te acum</a>
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <div id="contact-section" class="contact-section">
+        <footer class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column footer-logo-section">
+                    <div class="logo">
+                        <img src="logohn.svg" alt="Housing Navigator Logo" class="logo-img" style="width: 30px; height: 30px;">
+                        Housing Navigator
+                    </div>
+                    <p>Platformă modernă și sigură pentru accesul la locuințe sociale.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Link-uri Utile</h3>
+                    <ul>
+                        <li><a href="index.html#">Despre Noi</a></li>
+                        <li><a href="index.html#faq-section">Cum Funcționează</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Termeni și Condiții</a></li>
+                        <li><a href="#">Politica de Confidențialitate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column contact-info">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope icon"></i> contact@locuinte.ro</p>
+                    <p><i class="fas fa-phone icon"></i> +40 123 456 789</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Locuințe Sociale. Toate drepturile rezervate.
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
