@@ -680,3 +680,10 @@ a {
         padding: 0 20px;
     }
 }
+.welcome-message {
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-right: 15px;
+    padding: 8px 0;
+    font-size: 16px;
+}
