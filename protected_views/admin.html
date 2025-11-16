@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configurare Punctaj (ADMIN)</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="script" href="script.js">
+    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Asigură că antetul/navbarul este prezent */
         .admin-page-header {
             background-color: var(--color-primary);
             color: var(--color-white);
@@ -33,7 +33,7 @@
         <section class="content-section" style="min-height: 80vh; display: flex; align-items: center; justify-content: center;">
             <div class="form-container" style="max-width: 800px;">
                 
-                <h2 class="form-title" style="color: var(--accent-color);">Configurare Variabile HCL</h2>
+                <h2 class="form-title" style="color: var(--accent-color);">Configurare variabile Housing Navigator</h2>
                 <p class="text-center mb-6 text-gray-600">
                     Modifică valorile folosite de algoritmul de eligibilitate. Salvează pentru a le actualiza.
                 </p>
@@ -80,26 +80,18 @@
     </main>
 
     <script>
-        // Funcție pentru a simula salvarea variabilelor și a afișa un mesaj de succes
         function saveAdminVariables() {
-            // Simulare: citirea variabilelor din câmpuri
             const venitPct = document.getElementById('venitPct').value;
             const venitLimita = document.getElementById('venitLimita').value;
-            
-            // Simulare: afișarea unui mesaj de succes
             const messageElement = document.getElementById('adminSaveMessage');
             messageElement.textContent = ` Variabilele au fost actualizate! Punctaj Venit: ${venitPct} pct. Limită Venit: ${venitLimita} RON.`;
             messageElement.classList.remove('hidden');
-            
-            // Ascunde mesajul după câteva secunde
             setTimeout(() => {
                 messageElement.classList.add('hidden');
             }, 5000);
 
             console.log("Variabile Admin salvate:", { venitPct, venitLimita });
         }
-        
-        // La încărcarea paginii, ascunde mesajul de salvare (folosește clasa .hidden din style.css)
         document.addEventListener('DOMContentLoaded', () => {
              document.getElementById('adminSaveMessage').classList.add('hidden');
         });
