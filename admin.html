@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurare Punctaj (ADMIN)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Asigură că antetul/navbarul este prezent */
+        .admin-page-header {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 20px 40px;
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="admin-page-header">
+        <span><i class="fas fa-lock" style="margin-right: 10px;"></i> Panou Administrare Variabile Punctaj</span>
+        <a href="index.html" class="btn-secondary-nav" style="background: var(--color-highlight); color: var(--color-primary);">
+            <i class="fas fa-home"></i> Acasă
+        </a>
+    </div>
+
+    <main>
+        <section class="content-section" style="min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+            <div class="form-container" style="max-width: 800px;">
+                
+                <h2 class="form-title" style="color: var(--accent-color);">Configurare Variabile HCL</h2>
+                <p class="text-center mb-6 text-gray-600">
+                    Modifică valorile folosite de algoritmul de eligibilitate. Salvează pentru a le actualiza.
+                </p>
+
+                <div id="adminPanel" class="admin-panel">
+                    
+                    <div class="form-group-split">
+                        <div class="form-group">
+                            <label>1. Punctaj pentru Venit Mic (Puncte)</label>
+                            <input type="number" id="venitPct" value="40" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label>2. Limita Maximă Venit/Membru (RON)</label>
+                            <input type="number" id="venitLimita" value="1000" min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group-split">
+                        <div class="form-group">
+                            <label>3. Punctaj pentru Handicap/Afecțiune Gravă (Puncte)</label>
+                            <input type="number" id="handicapPct" value="15" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label>4. Punctaj pentru Condiții Locative Insalubre/Evacuare (Puncte)</label>
+                            <input type="number" id="locativPct" value="10" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>5. Punctaj per Membru Familie (Ex: 8 pct)</label>
+                        <input type="number" id="membriPct" value="8" min="0">
+                    </div>
+
+                    <div class="form-actions" style="border-top: none; justify-content: flex-end;">
+                        <button class="btn-form-submit" type="button" onclick="saveAdminVariables()" style="background-color: green;">
+                            <i class="fas fa-save"></i> Salvează Variabile
+                        </button>
+                    </div>
+                    <p id="adminSaveMessage" class="hidden" style="color: var(--color-success); font-weight: bold; text-align: center; margin-top: 10px;"></p>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Funcție pentru a simula salvarea variabilelor și a afișa un mesaj de succes
+        function saveAdminVariables() {
+            // Simulare: citirea variabilelor din câmpuri
+            const venitPct = document.getElementById('venitPct').value;
+            const venitLimita = document.getElementById('venitLimita').value;
+            
+            // Simulare: afișarea unui mesaj de succes
+            const messageElement = document.getElementById('adminSaveMessage');
+            messageElement.textContent = ` Variabilele au fost actualizate! Punctaj Venit: ${venitPct} pct. Limită Venit: ${venitLimita} RON.`;
+            messageElement.classList.remove('hidden');
+            
+            // Ascunde mesajul după câteva secunde
+            setTimeout(() => {
+                messageElement.classList.add('hidden');
+            }, 5000);
+
+            console.log("Variabile Admin salvate:", { venitPct, venitLimita });
+        }
+        
+        // La încărcarea paginii, ascunde mesajul de salvare (folosește clasa .hidden din style.css)
+        document.addEventListener('DOMContentLoaded', () => {
+             document.getElementById('adminSaveMessage').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

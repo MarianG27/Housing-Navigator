@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- MOCK USER DATA (NO DATABASE) ---
+
     const MOCK_USERS = [
-        // Admin Accounts (3)
+     
         { email: 'admin1@hn.ro', password: 'Admin.123', role: 'admin', name: 'Admin One' },
         { email: 'admin2@hn.ro', password: 'Admin.456', role: 'admin', name: 'Admin Two' },
         { email: 'admin3@hn.ro', password: 'Admin.789', role: 'admin', name: 'Admin Three' },
-        // Normal User Accounts (6)
+   
         { email: 'user1@hn.ro', password: 'User.123', role: 'user', name: 'Popescu Ion' },
         { email: 'user2@hn.ro', password: 'User.456', role: 'user', name: 'Ionescu Maria' },
         { email: 'user3@hn.ro', password: 'User.789', role: 'user', name: 'Georgescu Alex' },
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userName = localStorage.getItem('userName');
 
 
-    // --- 1. FAQ ACCORDION LOGIC ---
+ 
     const faqItems = document.querySelectorAll('.faq-item');
 
     faqItems.forEach(item => {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // --- 2. LOGIN PAGE LOGIC (login.html) ---
+  
     const loginForm = document.querySelector('.login-form-container form');
 
     if (loginForm) {
@@ -63,25 +63,24 @@ document.addEventListener('DOMContentLoaded', () => {
             );
 
             if (foundUser) {
-                // Successful Login Simulation
+              
                 localStorage.setItem('isLoggedIn', 'true');
                 localStorage.setItem('userRole', foundUser.role);
                 localStorage.setItem('userName', foundUser.name);
                 alert(`Autentificare reușită! Bine ai venit, ${foundUser.name} (${foundUser.role}).`);
-                window.location.href = 'index.html'; // Redirect to main page
-            } else {
+                window.location.href = 'index.html'; 
                 alert('Eroare de autentificare: Email sau parolă incorectă.');
             }
         });
     }
 
-    // --- 3. INDEX.HTML UI UPDATES (Navbar, Dashboard Alert) ---
+   
     const navbarRight = document.querySelector('.nav-links-right');
     const dashboardAlert = document.querySelector('.dashboard-alert');
     const connectButton = document.querySelector('.nav-links-right .btn-secondary-nav');
 
     if (isLoggedIn && navbarRight) {
-        // Replace 'Conectare' with personalized greeting and 'Deconectare'
+      
         navbarRight.innerHTML = `
             <span class="welcome-message">Salut, ${userName.split(' ')[0]}</span>
             <a href="#dashboard-section" class="btn-secondary-nav" style="background: var(--color-secondary);">
@@ -92,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </button>
         `;
 
-        // Handle Logout
+      
         document.getElementById('logoutBtn').addEventListener('click', () => {
             localStorage.clear();
             alert('Ai fost deconectat cu succes.');
@@ -100,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (dashboardAlert && !loginForm) { // Only run on index.html
+    if (dashboardAlert && !loginForm) {
         if (isLoggedIn) {
             dashboardAlert.style.backgroundColor = '#d1e7dd';
             dashboardAlert.style.borderColor = '#badbcc';
@@ -117,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- 4. ELIGIBILITY FORM LOGIC (index.html) ---
+  
     const form = document.querySelector('#eligibilitate-form form');
     const verifyBtn = document.getElementById('verifyBtn');
     const submitBtn = document.getElementById('submitBtn');
@@ -218,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     });
 
-    // Handle Official Form Submission
+  
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -226,13 +225,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!validateForm()) return;
 
             if (isLoggedIn) {
-                // If logged in, simulate official submission success
+              
                 alert(`Cererea oficială a fost trimisă cu succes de către ${userName}!`);
                 resetResult();
                 resultMessage.className = 'result-message visible high-chance';
                 resultMessage.innerHTML = '<h4>Succes!</h4><p>Cererea ta a fost înregistrată. Vei primi un email de confirmare și îți poți verifica poziția în Dashboard.</p>';
             } else {
-                // If not logged in, force redirect to login
+              
                 alert("Pentru a trimite cererea oficială și a salva datele, trebuie să fii logat. Vei fi redirecționat către pagina de Conectare/Înregistrare.");
                 window.location.href = 'login.html';
             }
